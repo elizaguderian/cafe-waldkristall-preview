@@ -7913,7 +7913,7 @@ function tex(canvas,renderer){
 
   // drag to turn
   let drag=null;
-  stage.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};stage.classList.add('drag');stage.setPointerCapture(e.pointerId);document.getElementById('hint').style.opacity=0;});
+  stage.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};stage.classList.add('drag');stage.setPointerCapture(e.pointerId);});
   stage.addEventListener('pointermove',e=>{
     if(!drag)return;
     G.yaw+=(e.clientX-drag.x)*.009;G.pitch=clamp(G.pitch+(e.clientY-drag.y)*.006,-.7,.7);
