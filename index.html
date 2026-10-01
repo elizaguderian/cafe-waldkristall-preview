@@ -89,8 +89,8 @@
 
 /* ---- panel content (from the 3 REPLACE placeholder files) ---- */
 .frame-panel{padding:40px 32px 70px;max-width:1120px;margin:0 auto;}
-.frame-panel [data-i18n]{display:none;}
-.frame-panel [data-i18n].active{display:inline;}
+.frame-panel [data-i18n],.tab [data-i18n]{display:none;}
+.frame-panel [data-i18n].active,.tab [data-i18n].active{display:inline;}
 @media (max-width:420px){
   .frame-panel{padding-left:12px!important;padding-right:12px!important;}
   body{padding-left:12px!important;padding-right:12px!important;}
@@ -251,7 +251,7 @@
   <div class="right-side">
     <div class="tabs" role="tablist">
       <button class="tab active" data-target="website" type="button">Website</button>
-      <button class="tab" data-target="voucher" type="button">Gutschein / Voucher</button>
+      <button class="tab" data-target="voucher" type="button"><span data-i18n data-lang="de" class="active">Gutschein</span><span data-i18n data-lang="en">Voucher</span></button>
     </div>
     <div class="global-controls">
       <div class="lang-toggle">
@@ -442,7 +442,7 @@
   function applyLang(lang){
     var active = lang === 'en' ? 'en' : 'de';
     langBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === active); });
-    document.querySelectorAll('.frame-panel [data-i18n]').forEach(function(el){
+    document.querySelectorAll('.frame-panel [data-i18n], .tab [data-i18n]').forEach(function(el){
       el.classList.toggle('active', el.getAttribute('data-lang') === active);
     });
   }
