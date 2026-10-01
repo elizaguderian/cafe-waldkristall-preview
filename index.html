@@ -7935,8 +7935,8 @@ function tex(canvas,renderer){
   bC.onclick=()=>{G.card=G.card>.5?0:1;if(!G.card)G.flip=0;syncBtns();};
   bX.onclick=()=>{G.flip=G.flip>.5?0:1;syncBtns();};
   function setCover(v){front.material[4]=v==='A'?frontMatA:v==='B'?frontMatB:frontMatC;back.material[5]=v==='A'?backMatA:v==='B'?backMatB:backMatC;cA.classList.toggle('on',v==='A');cB.classList.toggle('on',v==='B');cC.classList.toggle('on',v==='C');dirty=true;}
-  cA.onclick=()=>{setCover('A');if(G.open<.5){G.yaw=0;}};cB.onclick=()=>{setCover('B');if(G.open<.5){G.yaw=0;}};
-  cC.onclick=()=>{setCover('C');if(G.open<.5){G.yaw=0;}};
+  cA.onclick=()=>{setCover('A');bF.onclick();};cB.onclick=()=>{setCover('B');bF.onclick();};
+  cC.onclick=()=>{setCover('C');bF.onclick();};
   syncBtns();
   // language + theme + embed mode, driven by the portfolio hub (standalone stays English / OS theme)
   window.__applyLang=function(l){LANG=l==='de'?'de':'en';document.documentElement.lang=LANG;
