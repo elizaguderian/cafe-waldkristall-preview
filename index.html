@@ -607,7 +607,7 @@
     var lang = document.querySelector('.lang-toggle button.active').dataset.lang;
     var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     var msg = { source:'aptifex-hub', embed:true, lang:lang, theme:theme };
-    if(startOver === true){ msg.cover = 'C'; }   // the voucher always opens on cover C (the client's favorite), closed, front side
+    if(startOver === true){ msg.cover = 'A'; }   // the voucher always opens on cover A, closed, front side
     f.contentWindow.postMessage(msg, '*');
   }
   document.getElementById('vchFrame').addEventListener('load', function(){ syncVoucher(true); });
