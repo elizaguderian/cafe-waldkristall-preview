@@ -1189,6 +1189,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
 
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CafeOrCoffeeShop", "name": "Café Waldkristall", "url": "https://www.cafe-waldkristall.de/", "telephone": "+49 5744 4087", "email": "info@cafe-waldkristall.de", "image": "https://www.cafe-waldkristall.de/assets/img/fruehstuecksbuffet-hausgemachte-aufstriche-cafe-waldkristall-1600.webp", "priceRange": "10–20 €", "address": {"@type": "PostalAddress", "streetAddress": "Bergstraße 141", "postalCode": "32609", "addressLocality": "Hüllhorst", "addressRegion": "Nordrhein-Westfalen", "addressCountry": "DE"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "10:00", "closes": "18:00"}], "servesCuisine": ["Frühstück", "Kaffee und Kuchen"], "acceptsReservations": true, "menu": "https://www.cafe-waldkristall.de/speisekarte/", "sameAs": ["https://www.instagram.com/cafe_waldkristall/"]}</script>
 </head>
@@ -1361,7 +1368,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
       <h2>Mitten im Wiehengebirge, direkt am Wittekindsweg</h2>
       <p class="lead">Suchst Du einen Ort, der Dich runterbringt und inspiriert? Dann schnapp Dir bequeme Schuhe, mach einen Spaziergang durchs Wiehengebirge und komm anschließend bei uns vorbei – mitten auf dem Wiehenkamm, direkt am Wittekindsweg.</p>
       <p>Hier erwartet Dich nicht nur ein herrlicher Ausblick, sondern auch jede Menge Wohlfühlmomente: leckere Speisen, ein warmes Getränk, ein Lächeln – und ganz viel Natur ringsum. Ein echtes Seelenplätzchen für Naturliebhaber – und vielleicht auch für Dich?</p>
-      <p><b><span class="nobr">Knöllchen-Allergie</span>?</b> Dann haben wir einen kleinen, aber feinen Tipp für Dich: Bitte nutze einen unserer 3 ausgewiesenen Parkplätze … denn wer weiß schon, wann die Waldhexe wieder unterwegs ist 😉</p>
+      <div class="parkinfo"><span class="parkinfo__p" aria-hidden="true"><svg viewBox="2 6 60 31" width="56" height="29"><path fill="currentColor" d="M4 27v-5.5q0-2.700 2.600-3.300l8.400-1.900 6.200-6.700Q22.600 8 24.800 8h14.600q2.200 0 3.600 1.600l6 6.600 8.400 1.800q2.600.6 2.600 3.300V27q0 2-2 2H6q-2 0-2-2z"/><path fill="var(--forest-deep)" d="M22.600 15.600l3.800-4.600q.6-.6 1.400-.6h3.700v5.200zM34.500 10.400h4.300q1 0 1.700.7l4.100 4.500H34.500z"/><circle cx="17" cy="29" r="6.200" fill="var(--forest-deep)"/><circle cx="47" cy="29" r="6.200" fill="var(--forest-deep)"/><circle cx="17" cy="29" r="4.400" fill="currentColor"/><circle cx="47" cy="29" r="4.400" fill="currentColor"/><circle cx="17" cy="29" r="1.600" fill="var(--forest-deep)"/><circle cx="47" cy="29" r="1.600" fill="var(--forest-deep)"/><circle cx="56.500" cy="21.500" r="1.600" fill="var(--forest-deep)"/></svg></span><div><h3>Parken am Waldkristall</h3><p>Für unsere Gäste stehen drei ausgewiesene Parkflächen auf unterschiedlichen Grundstücken zur Verfügung.</p></div></div>
       <div class="btn-row">
         <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Caf%C3%A9+Waldkristall+Bergstra%C3%9Fe+141+32609+H%C3%BCllhorst" rel="noopener">Route mit Google Maps planen</a>
         <a class="btn btn--ghost" href="https://www.komoot.de/highlight/115620" rel="noopener">Rad- &amp; Wanderroute auf Komoot</a>
@@ -2333,6 +2340,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
 
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Feier & Hochzeit im Wiehengebirge", "item": "https://www.cafe-waldkristall.de/feiern/"}]}</script>
 </head>
@@ -3235,6 +3249,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
 
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Veranstaltungen: Livemusik & Yoga", "item": "https://www.cafe-waldkristall.de/veranstaltungen/"}]}</script>
 </head>
@@ -4098,6 +4119,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 /* Legal pages: equal space above first and below last line */
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
+
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
 
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Speisekarte & Preise", "item": "https://www.cafe-waldkristall.de/speisekarte/"}]}</script>
@@ -4964,6 +4992,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
 
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Jobs in Hüllhorst: Service & Hauswirtschaft", "item": "https://www.cafe-waldkristall.de/jobs/"}]}</script>
 </head>
@@ -5790,6 +5825,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
 
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Newsletter", "item": "https://www.cafe-waldkristall.de/newsletter/"}]}</script>
 </head>
@@ -6603,6 +6645,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
 
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://www.cafe-waldkristall.de/impressum/"}]}</script>
 </head>
@@ -7394,6 +7443,13 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 /* Legal pages: equal space above first and below last line */
 .legal>:first-child{margin-top:0}
 .legal>:last-child{margin-bottom:0}
+
+/* Parking note */
+.parkinfo{display:flex;gap:18px;align-items:center;margin:26px 0 8px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.parkinfo__p{flex:none;display:grid;place-items:center;width:72px;height:72px;border-radius:16px;background:var(--forest-deep);color:var(--white,#fff)}
+.parkinfo h3{font-size:1.2rem;margin:0 0 6px}
+.parkinfo p{margin:0}
+@media (max-width:420px){.parkinfo{flex-direction:column;align-items:flex-start;gap:12px}}
 
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.cafe-waldkristall.de/"}, {"@type": "ListItem", "position": 2, "name": "Datenschutzerklärung", "item": "https://www.cafe-waldkristall.de/datenschutz/"}]}</script>
