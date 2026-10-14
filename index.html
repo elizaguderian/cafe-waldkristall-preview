@@ -842,9 +842,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -961,7 +962,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -2001,9 +2002,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -2120,7 +2122,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -2918,9 +2920,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -3037,7 +3040,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -3797,9 +3800,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -3916,7 +3920,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -4677,9 +4681,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -4796,7 +4801,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -5518,9 +5523,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -5637,7 +5643,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -6346,9 +6352,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -6465,7 +6472,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
@@ -7153,9 +7160,10 @@ body{padding-bottom:76px}
 .card__img img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:20px}
 .card__body p:last-child{margin-bottom:0}
-.card--link{text-decoration:none;color:inherit;transition:transform 200ms var(--ease-out),box-shadow 200ms ease}
-.card--link:active{transform:scale(.99)}
-@media (hover:hover) and (pointer:fine){.card--link:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+.card--link{text-decoration:none;color:inherit;transition:transform 380ms var(--ease-out),box-shadow 380ms ease;will-change:transform}
+.card--link.reveal{transition:opacity 500ms var(--ease-out),transform 380ms var(--ease-out),box-shadow 380ms ease}
+.card--link.reveal.is-in:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.card--link.reveal.is-in:hover{box-shadow:0 2px 4px rgba(62,44,34,.06),0 22px 44px rgba(62,44,34,.17);transform:translateY(-4px) scale(1.025)}}
 .more{font-weight:600;color:var(--forest)}
 .more::after{content:" →"}
 
@@ -7272,7 +7280,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   html{scroll-behavior:auto}
   .reveal{transform:none;transition:opacity 300ms ease}
   .mnav{transform:none}
-  .btn:active,.chip:active,.menu-btn:active,.card--link:active{transform:none}
+  .btn:active,.chip:active,.menu-btn:active,.card--link:active,.card--link.reveal.is-in:hover,.card--link.reveal.is-in:active{transform:none}
 }
 
 /* ---------- Tablet ---------- */
