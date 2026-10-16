@@ -1001,7 +1001,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -1095,6 +1095,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -1443,17 +1462,17 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
       <p class="small">Noch etwas offen? Ruf uns an: <a href="tel:+4957444087"><span class="nobr">05744 4087</span></a></p>
     </div>
     <div class="faq__list reveal">
-      <details class="faq__item"><summary>Wann hat das Café Waldkristall geöffnet?</summary><p>Samstags und sonntags von 10 bis <span class="nobr">18 Uhr</span>. Das Frühstücksbuffet gibt es an beiden Tagen von 10 bis <span class="nobr">13 Uhr</span>. Montag bis Freitag ist geschlossen, außer für Feiern nach Absprache.</p></details>
-      <details class="faq__item"><summary>Darf ich meinen Hund mitbringen?</summary><p>Ja, Gäste auf vier Beinen sind bei uns willkommen. Bitte führe Deinen Hund an der Leine.</p></details>
-      <details class="faq__item"><summary>Was kostet das Frühstücksbuffet?</summary><p><span class="nobr">25,50 €</span> für Erwachsene und <span class="nobr">9,00 €</span> für Kinder von 3 bis <span class="nobr">13 Jahre</span>n, inkl. MwSt., ohne Getränke. Kaffee, Tee und Saft bestellst Du à la carte dazu.</p></details>
-      <details class="faq__item"><summary>Wie reserviere ich einen Tisch?</summary><p>Online über den Button „Tisch reservieren“ oder telefonisch unter <span class="nobr">05744 4087</span>. Gruppen ab <span class="nobr">9 Personen</span> reservieren bitte per Telefon oder <span class="nobr">E-Mail</span> an <span class="nobr">info@cafe-waldkristall.de</span>.</p></details>
-      <details class="faq__item"><summary>Gibt es vegane oder vegetarische Speisen?</summary><p>Ja. Auf dem Buffet stehen zum Beispiel vegane Fruchtaufstriche, Linsenfrikadellen und eine vegane Gemüsesuppe. Wir backen ohne Weizenmehl, nur mit Dinkelmehl der Porta Mühle. Bei Unverträglichkeiten sprich uns einfach an.</p></details>
-      <details class="faq__item"><summary>Wo kann ich parken?</summary><p>An der Bergstraße gibt es 3 ausgewiesene Parkplätze mit zusammen rund <span class="nobr">50 Plätze</span>n. Zu Fuß erreichst Du uns direkt über den Wittekindsweg.</p></details>
-      <details class="faq__item"><summary>Kann ich im Café Waldkristall feiern oder heiraten?</summary><p>Ja. Familienfeiern, Hochzeiten und Jubiläen mit 20 bis <span class="nobr">50 Gäste</span>n, nach Absprache auch außerhalb der Öffnungszeiten. Bei gutem Wetter feiert Ihr auf der Terrasse und im Garten weiter.</p></details>
-      <details class="faq__item"><summary>Gibt es Gutscheine?</summary><p>Ja. Du bestellst den Gutschein online, er kommt automatisch per <span class="nobr">E-Mail</span> zu Dir.</p></details>
+      <details class="faq__item" name="faq"><summary>Wann hat das Café Waldkristall geöffnet?</summary><p>Samstags und sonntags von 10 bis <span class="nobr">18 Uhr</span>. Das Frühstücksbuffet gibt es an beiden Tagen von 10 bis <span class="nobr">13 Uhr</span>. Montag bis Freitag ist geschlossen, außer für Feiern nach Absprache.</p></details>
+      <details class="faq__item" name="faq"><summary>Darf ich meinen Hund mitbringen?</summary><p>Ja, Gäste auf vier Beinen sind bei uns willkommen. Bitte führe Deinen Hund an der Leine.</p></details>
+      <details class="faq__item" name="faq"><summary>Was kostet das Frühstücksbuffet?</summary><p><span class="nobr">25,50 €</span> für Erwachsene und <span class="nobr">9,00 €</span> für Kinder von 3 bis <span class="nobr">13 Jahre</span>n, inkl. MwSt., ohne Getränke. Kaffee, Tee und Saft bestellst Du à la carte dazu.</p></details>
+      <details class="faq__item" name="faq"><summary>Wie reserviere ich einen Tisch?</summary><p>Online über den Button „Tisch reservieren“ oder telefonisch unter <span class="nobr">05744 4087</span>. Gruppen ab <span class="nobr">9 Personen</span> reservieren bitte per Telefon oder <span class="nobr">E-Mail</span> an <span class="nobr">info@cafe-waldkristall.de</span>.</p></details>
+      <details class="faq__item" name="faq"><summary>Gibt es vegane oder vegetarische Speisen?</summary><p>Ja. Auf dem Buffet stehen zum Beispiel vegane Fruchtaufstriche, Linsenfrikadellen und eine vegane Gemüsesuppe. Wir backen ohne Weizenmehl, nur mit Dinkelmehl der Porta Mühle. Bei Unverträglichkeiten sprich uns einfach an.</p></details>
+      <details class="faq__item" name="faq"><summary>Wo kann ich parken?</summary><p>An der Bergstraße gibt es 3 ausgewiesene Parkplätze mit zusammen rund <span class="nobr">50 Plätze</span>n. Zu Fuß erreichst Du uns direkt über den Wittekindsweg.</p></details>
+      <details class="faq__item" name="faq"><summary>Kann ich im Café Waldkristall feiern oder heiraten?</summary><p>Ja. Familienfeiern, Hochzeiten und Jubiläen mit 20 bis <span class="nobr">50 Gäste</span>n, nach Absprache auch außerhalb der Öffnungszeiten. Bei gutem Wetter feiert Ihr auf der Terrasse und im Garten.</p></details>
+      <details class="faq__item" name="faq"><summary>Gibt es Gutscheine?</summary><p>Ja. Du bestellst den Gutschein online, er kommt automatisch per <span class="nobr">E-Mail</span> zu Dir.</p></details>
     </div>
   </div>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wann hat das Café Waldkristall geöffnet?", "acceptedAnswer": {"@type": "Answer", "text": "Samstags und sonntags von 10 bis 18 Uhr. Das Frühstücksbuffet gibt es an beiden Tagen von 10 bis 13 Uhr. Montag bis Freitag ist geschlossen, außer für Feiern nach Absprache."}}, {"@type": "Question", "name": "Darf ich meinen Hund mitbringen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, Gäste auf vier Beinen sind bei uns willkommen. Bitte führe Deinen Hund an der Leine."}}, {"@type": "Question", "name": "Was kostet das Frühstücksbuffet?", "acceptedAnswer": {"@type": "Answer", "text": "25,50 € für Erwachsene und 9,00 € für Kinder von 3 bis 13 Jahren, inkl. MwSt., ohne Getränke. Kaffee, Tee und Saft bestellst Du à la carte dazu."}}, {"@type": "Question", "name": "Wie reserviere ich einen Tisch?", "acceptedAnswer": {"@type": "Answer", "text": "Online über den Button „Tisch reservieren“ oder telefonisch unter 05744 4087. Gruppen ab 9 Personen reservieren bitte per Telefon oder E-Mail an info@cafe-waldkristall.de."}}, {"@type": "Question", "name": "Gibt es vegane oder vegetarische Speisen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Auf dem Buffet stehen zum Beispiel vegane Fruchtaufstriche, Linsenfrikadellen und eine vegane Gemüsesuppe. Wir backen ohne Weizenmehl, nur mit Dinkelmehl der Porta Mühle. Bei Unverträglichkeiten sprich uns einfach an."}}, {"@type": "Question", "name": "Wo kann ich parken?", "acceptedAnswer": {"@type": "Answer", "text": "An der Bergstraße gibt es 3 ausgewiesene Parkplätze mit zusammen rund 50 Plätzen. Zu Fuß erreichst Du uns direkt über den Wittekindsweg."}}, {"@type": "Question", "name": "Kann ich im Café Waldkristall feiern oder heiraten?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Familienfeiern, Hochzeiten und Jubiläen mit 20 bis 50 Gästen, nach Absprache auch außerhalb der Öffnungszeiten. Bei gutem Wetter feiert Ihr auf der Terrasse und im Garten weiter."}}, {"@type": "Question", "name": "Gibt es Gutscheine?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Du bestellst den Gutschein online, er kommt automatisch per E-Mail zu Dir."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wann hat das Café Waldkristall geöffnet?", "acceptedAnswer": {"@type": "Answer", "text": "Samstags und sonntags von 10 bis 18 Uhr. Das Frühstücksbuffet gibt es an beiden Tagen von 10 bis 13 Uhr. Montag bis Freitag ist geschlossen, außer für Feiern nach Absprache."}}, {"@type": "Question", "name": "Darf ich meinen Hund mitbringen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, Gäste auf vier Beinen sind bei uns willkommen. Bitte führe Deinen Hund an der Leine."}}, {"@type": "Question", "name": "Was kostet das Frühstücksbuffet?", "acceptedAnswer": {"@type": "Answer", "text": "25,50 € für Erwachsene und 9,00 € für Kinder von 3 bis 13 Jahren, inkl. MwSt., ohne Getränke. Kaffee, Tee und Saft bestellst Du à la carte dazu."}}, {"@type": "Question", "name": "Wie reserviere ich einen Tisch?", "acceptedAnswer": {"@type": "Answer", "text": "Online über den Button „Tisch reservieren“ oder telefonisch unter 05744 4087. Gruppen ab 9 Personen reservieren bitte per Telefon oder E-Mail an info@cafe-waldkristall.de."}}, {"@type": "Question", "name": "Gibt es vegane oder vegetarische Speisen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Auf dem Buffet stehen zum Beispiel vegane Fruchtaufstriche, Linsenfrikadellen und eine vegane Gemüsesuppe. Wir backen ohne Weizenmehl, nur mit Dinkelmehl der Porta Mühle. Bei Unverträglichkeiten sprich uns einfach an."}}, {"@type": "Question", "name": "Wo kann ich parken?", "acceptedAnswer": {"@type": "Answer", "text": "An der Bergstraße gibt es 3 ausgewiesene Parkplätze mit zusammen rund 50 Plätzen. Zu Fuß erreichst Du uns direkt über den Wittekindsweg."}}, {"@type": "Question", "name": "Kann ich im Café Waldkristall feiern oder heiraten?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Familienfeiern, Hochzeiten und Jubiläen mit 20 bis 50 Gästen, nach Absprache auch außerhalb der Öffnungszeiten. Bei gutem Wetter feiert Ihr auf der Terrasse und im Garten."}}, {"@type": "Question", "name": "Gibt es Gutscheine?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Du bestellst den Gutschein online, er kommt automatisch per E-Mail zu Dir."}}]}</script>
 </section>
 
 <section class="section section--card" id="kontakt">
@@ -2163,7 +2182,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -2257,6 +2276,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -3083,7 +3121,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -3177,6 +3215,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -3340,6 +3397,26 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   </div>
 </section>
 
+<!-- NL-ARCHIVE:start -->
+<section class="section section--card" id="newsletter-archiv">
+  <div class="wrap" style="max-width:820px">
+    <span class="eyebrow">Newsletter</span>
+    <h2>Aktuelle Veranstaltungen im Newsletter</h2>
+    <p class="lead">Alle aktuellen Termine kannst Du hier lesen – ganz ohne Anmeldung.</p>
+    <p><a class="btn btn--primary" href="https://eepurl.com/o9tutVxQKP" rel="noopener" target="_blank">Aktuellen Newsletter lesen</a></p>
+    <div class="nl-archive">
+      <div class="nl-archive__head"><h3>Frühere Newsletter</h3></div>
+      <ul class="nl-list">
+        <li><a class="nl-list__row" href="https://eepurl.com/o9tutVxQKP" rel="noopener" target="_blank"><span class="nl-list__date">Sep 2026</span><span class="nl-list__title">Newsletter 09/2026</span><span class="nl-list__go">Lesen</span></a></li>
+        <li><a class="nl-list__row" href="https://eepurl.com/o4fCUuCna3" rel="noopener" target="_blank"><span class="nl-list__date">Jul 2026</span><span class="nl-list__title">Newsletter 07&amp;08/2026 Update</span><span class="nl-list__go">Lesen</span></a></li>
+        <li><a class="nl-list__row" href="https://eepurl.com/0Li6ID20Da" rel="noopener" target="_blank"><span class="nl-list__date">Jul 2026</span><span class="nl-list__title">Newsletter 07/2026</span><span class="nl-list__go">Lesen</span></a></li>
+        <li><a class="nl-list__row" href="https://eepurl.com/879uZkQrMA" rel="noopener" target="_blank"><span class="nl-list__date">Jun 2026</span><span class="nl-list__title">Newsletter 06/2026</span><span class="nl-list__go">Lesen</span></a></li>
+      </ul>
+      <p class="small" style="margin-top:14px"><a href="https://us7.campaign-archive.com/home/?u=f6ae9152bf166a7cb25285986&amp;id=4884933a6f" rel="noopener" target="_blank">Alle Newsletter ansehen</a></p>
+    </div>
+  </div>
+</section>
+<!-- NL-ARCHIVE:end -->
 <section class="section section--card" id="livemusik">
   <div class="wrap split">
     <div class="split__img reveal"><img src="assets/img/livemusik-abend-seminarraum-cafe-waldkristall-1600.webp" srcset="assets/img/livemusik-abend-seminarraum-cafe-waldkristall-800.webp 800w, assets/img/livemusik-abend-seminarraum-cafe-waldkristall-1600.webp 1600w" sizes="(min-width:700px) 50vw, 100vw" alt="Gut besuchter Abend im Seminarraum des Café Waldkristall mit Blick auf die Bühne" loading="lazy" decoding="async"></div>
@@ -3359,10 +3436,9 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
     <h2>Yoga, Kurse &amp; Workshops</h2>
     <p class="lead" style="max-width:60ch">Seit über <span class="nobr">14 Jahre</span>n verwandeln inspirierende Menschen unseren Raum in einen Ort für Austausch, Kreativität und Begegnung. Vielleicht ist ja auch für Dich etwas dabei?</p>
     <div class="partners" style="margin-top:24px">
-      <div class="partner"><h3>Yoga mit Brigitte Kottkamp</h3><p><a href="http://www.aktiv-mit-yoga.de/" rel="noopener">www.aktiv-mit-yoga.de</a><br><a href="mailto:bk@aktiv-mit-yoga.de"><span class="nobr">bk@aktiv-mit-yoga.de</span></a><br>Fon <span class="nobr">0163 4592845</span></p></div>
-      <div class="partner"><h3>Yoga aus der Quelle</h3><p>Tanja Meier<br>Faszienyoga, Hormonyoga, Yoga mit <span class="nobr">Mantra-Begleitung</span>, Entspannung + Meditation<br><a href="https://www.instagram.com/yoga_aus_der_quelle/" rel="noopener">Instagram: yoga_aus_der_quelle</a><br><a href="mailto:Yoga_aus_derquelle@web.de"><span class="nobr">Yoga_aus_derquelle@web.de</span></a><br>Fon <span class="nobr">0176 39905390</span></p></div>
-      <div class="partner"><h3>Hatha Yoga mit Alexa</h3><p>Alexa Murillo<br><a href="mailto:alexa@murillo-mendoza.de"><span class="nobr">alexa@murillo-mendoza.de</span></a><br>Fon <span class="nobr">0179 9180446</span></p></div>
-      <div class="partner"><h3>Herzreich</h3><p>Valentina Knappe<br>Bewegt – leicht – frei<br><a href="https://herzreich-minden.de" rel="noopener"><span class="nobr">herzreich-minden</span>.de</a><br><a href="mailto:herzreich@gmx.de"><span class="nobr">herzreich@gmx.de</span></a><br>Fon <span class="nobr">0173 9262359</span></p></div>
+      <div class="partner"><h3>Yoga mit Brigitte Kottkamp</h3><p><a href="http://www.aktiv-mit-yoga.de/" rel="noopener">www.aktiv-mit-yoga.de</a><br><a href="mailto:bk@aktiv-mit-yoga.de"><span class="nobr">bk@aktiv-mit-yoga.de</span></a><br>Tel. <span class="nobr">0163 4592845</span><br><strong>Mo</strong> 17:00 &amp; 19:00 Uhr<br><strong>Mi</strong> 9:30, 17:00 &amp; 19:00 Uhr</p></div>
+      <div class="partner"><h3>Yoga aus der Quelle</h3><p>Tanja Meier<br>Faszienyoga, Hormonyoga, Yoga mit <span class="nobr">Mantra-Begleitung</span>, Entspannung + Meditation<br><a href="https://www.instagram.com/yoga_aus_der_quelle/" rel="noopener">Instagram: yoga_aus_der_quelle</a><br><a href="mailto:Yoga_aus_derquelle@web.de"><span class="nobr">Yoga_aus_derquelle@web.de</span></a><br>Tel. <span class="nobr">0176 39905390</span><br><strong>Di</strong> 18:30 Uhr<br><strong>Do</strong> 19:30 Uhr</p></div>
+      <div class="partner"><h3>Hatha Yoga mit Alexa</h3><p>Alexa Murillo<br><a href="mailto:alexa@murillo-mendoza.de"><span class="nobr">alexa@murillo-mendoza.de</span></a><br>Tel. <span class="nobr">0179 9180446</span><br><strong>Fr</strong> 16:30 Uhr</p></div>
     </div>
     <p class="small" style="margin-top:14px">Anmeldung zu den Kursen direkt bei den Kursleitern.</p>
   </div>
@@ -3965,7 +4041,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -4059,6 +4135,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -4848,7 +4943,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -4942,6 +5037,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -5692,7 +5806,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -5786,6 +5900,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -6523,7 +6656,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -6617,6 +6750,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
@@ -7333,7 +7485,7 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
   .steps{grid-template-columns:repeat(3,1fr)}
   .steps li{padding:56px 20px 20px}
   .steps li::before{left:20px;top:18px}
-  .partners{grid-template-columns:repeat(4,1fr)}
+  .partners{grid-template-columns:repeat(3,1fr)}
 }
 
 /* Photo focus + tablet card balance */
@@ -7427,6 +7579,25 @@ mark{background:#FFE7A8;color:var(--bark);padding:0 3px;border-radius:3px}
 .faq__item summary:hover{color:var(--forest-deep)}
 .faq__item summary:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
 .faq__item p{margin:0;padding:0 18px 18px;color:var(--bark-soft)}
+@supports (interpolate-size:allow-keywords){
+  .faq__list{interpolate-size:allow-keywords}
+  .faq__item::details-content{block-size:0;overflow:clip;opacity:0;transition:block-size 260ms var(--ease-out),opacity 200ms ease,content-visibility 260ms allow-discrete}
+  .faq__item[open]::details-content{block-size:auto;opacity:1}
+  @media (prefers-reduced-motion:reduce){.faq__item::details-content{transition:none}}
+}
+.nl-archive{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.nl-archive__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:12px}
+.nl-archive__head h3{margin:0;font-size:1.1rem}
+.nl-tag{font:600 .72rem/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-soft);border:1px dashed var(--bark-soft);border-radius:999px;padding:5px 10px}
+.nl-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.nl-list li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.nl-list__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:14px 18px;min-height:56px;text-decoration:none;color:inherit}
+.nl-list__row:hover .nl-list__go{text-decoration:underline}
+.nl-list__row:focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:var(--radius)}
+.nl-list__date{font:600 .85rem/1 "Inter",sans-serif;color:var(--forest-deep);min-width:64px}
+.nl-list__title{color:var(--bark);font-weight:600}
+.nl-list__go{font:600 .9rem/1 "Inter",sans-serif;color:var(--forest)}
+@media (max-width:519px){.nl-list__row{grid-template-columns:1fr auto}.nl-list__date{grid-column:1/-1}}
 @media (min-width:900px){.faq{grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}.faq__intro{position:sticky;top:calc(var(--header-h) + 24px)}}
 
 /* Never split emails, phone numbers, times, amounts or short hyphen words across lines */
