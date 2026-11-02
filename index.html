@@ -8222,14 +8222,12 @@ function drawInsideBottom(I){       // inside of the front cover: the Gutschein
   x.fillText('Er ist übertragbar, wird jedoch nicht bar ausgezahlt.',110,890);
   x.textAlign='center';x.fillStyle=C.barkSoft;x.font='italic 300 34px '+F_SERIF;
   x.fillText('Karte rausziehen, vorzeigen, genießen.',CARD.x+CARD.w/2,CARD.y+CARD.h+95);x.textAlign='left';
-  // card holder: slits at two opposite corners (top-left and bottom-right)
+  // card holder: thin gold frame + two gold corner marks (photo corners stick on top-left and bottom-right)
   const {x:cx,y:cy,w:cw,h:ch,leg:L}=CARD;
+  x.strokeStyle=C.honey;x.lineWidth=3;x.lineJoin='round';x.strokeRect(cx,cy,cw,ch);
+  x.lineWidth=9;x.lineCap='round';
   [[cx,cy,1,1],[cx+cw,cy+ch,-1,-1]].forEach(([px,py,sx,sy])=>{
-    x.lineCap='round';
-    x.strokeStyle='rgba(255,255,255,.9)';x.lineWidth=4;
-    x.beginPath();x.moveTo(px+sx*3,py+sy*(L+3));x.lineTo(px+sx*(L+3),py+sy*3);x.stroke();
-    x.strokeStyle='rgba(40,28,22,.7)';x.lineWidth=3;
-    x.beginPath();x.moveTo(px,py+sy*L);x.lineTo(px+sx*L,py);x.stroke();
+    x.beginPath();x.moveTo(px,py+sy*L*.55);x.lineTo(px,py);x.lineTo(px+sx*L*.55,py);x.stroke();
   });
   return c;
 }
@@ -8367,10 +8365,10 @@ function tex(canvas,renderer){
   T.cardBack.repeat.set(1/cw,1/ch);T.cardBack.offset.set(.5,.5);T.cardBack.wrapS=T.cardBack.wrapT=THREE.ClampToEdgeWrapping;
   const bp=new THREE.Mesh(new THREE.ShapeGeometry(sh),new THREE.MeshStandardMaterial({map:T.cardBack,roughness:.55}));
   bp.rotation.y=Math.PI;bp.position.z=-.002;cardG.add(bp);
-  const flapMat=new THREE.MeshStandardMaterial({color:new THREE.Color(0xF5EFE4).convertSRGBToLinear(),roughness:.9});
-  const flaps=new THREE.Group();cardG.add(flaps);
+  const flapMat=new THREE.MeshStandardMaterial({color:new THREE.Color(0x7A5A3E).convertSRGBToLinear(),roughness:.8});
+  const flaps=new THREE.Group();front.add(flaps);flaps.position.copy(home);flaps.rotation.y=Math.PI;
   const L=CARD.leg/100;
-  [[1,1],[-1,-1]].forEach(([sx,sy])=>{
+  [[-1,1],[1,-1]].forEach(([sx,sy])=>{
     const s=new THREE.Shape();const cx=sx*cw/2,cy=sy*ch/2;
     s.moveTo(cx+sx*.02,cy+sy*.02);s.lineTo(cx-sx*(L-.02),cy+sy*.02);s.lineTo(cx+sx*.02,cy-sy*(L-.02));s.closePath();
     const m=new THREE.Mesh(new THREE.ShapeGeometry(s),flapMat);m.position.z=.045;flaps.add(m);
@@ -8400,7 +8398,7 @@ function tex(canvas,renderer){
     const c=ease(S.card);
     cardG.position.set(home.x,home.y+c*2.4,home.z-c*4);
     cardG.rotation.set(c*.18,Math.PI+c*.12+Math.PI*ease(S.flip),c*-.05);
-    flaps.visible=c<.04;cardG.visible=S.open>.03;
+    flaps.visible=S.open>.03;cardG.visible=S.open>.03;
     // fit
     const need_h=(PH+PH*ease(a))+5, need_w=PW+6, k=2*Math.tan(THREE.MathUtils.degToRad(cam.fov/2));
     const dist=Math.max(need_h/k,need_w/(k*cam.aspect));
