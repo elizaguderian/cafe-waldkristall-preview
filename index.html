@@ -8222,13 +8222,9 @@ function drawInsideBottom(I){       // inside of the front cover: the Gutschein
   x.fillText('Er ist übertragbar, wird jedoch nicht bar ausgezahlt.',110,890);
   x.textAlign='center';x.fillStyle=C.barkSoft;x.font='italic 300 34px '+F_SERIF;
   x.fillText('Karte rausziehen, vorzeigen, genießen.',CARD.x+CARD.w/2,CARD.y+CARD.h+95);x.textAlign='left';
-  // card holder: thin gold frame + two gold corner marks (photo corners stick on top-left and bottom-right)
+  // card holder: thin gold frame marks where the card is taped on
   const {x:cx,y:cy,w:cw,h:ch,leg:L}=CARD;
   x.strokeStyle=C.honey;x.lineWidth=3;x.lineJoin='round';x.strokeRect(cx,cy,cw,ch);
-  x.lineWidth=9;x.lineCap='round';
-  [[cx,cy,1,1],[cx+cw,cy+ch,-1,-1]].forEach(([px,py,sx,sy])=>{
-    x.beginPath();x.moveTo(px,py+sy*L*.55);x.lineTo(px,py);x.lineTo(px+sx*L*.55,py);x.stroke();
-  });
   return c;
 }
 function drawFrontB(I){
@@ -8398,7 +8394,7 @@ function tex(canvas,renderer){
     const c=ease(S.card);
     cardG.position.set(home.x,home.y+c*2.4,home.z-c*4);
     cardG.rotation.set(c*.18,Math.PI+c*.12+Math.PI*ease(S.flip),c*-.05);
-    flaps.visible=S.open>.03;cardG.visible=S.open>.03;
+    flaps.visible=false;cardG.visible=S.open>.03;
     // fit
     const need_h=(PH+PH*ease(a))+5, need_w=PW+6, k=2*Math.tan(THREE.MathUtils.degToRad(cam.fov/2));
     const dist=Math.max(need_h/k,need_w/(k*cam.aspect));
